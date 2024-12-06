@@ -21,6 +21,12 @@
 
 - Versione: 1.2
 
+---
+
+![logo](./logo.png)
+
+---
+
 Questo script converte un file CSV contenente eventi in un file ICS compatibile con applicazioni calendario (Google Calendar, Apple Calendar, etc.). Lo script utilizza un file JSON per definire gli orari dei turni associati agli eventi.
 
 ---
