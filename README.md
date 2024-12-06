@@ -1,5 +1,22 @@
 # CSV to Calendar
 
+- [CSV to Calendar](#csv-to-calendar)
+  - [Descrizione](#descrizione)
+  - [Requisiti](#requisiti)
+    - [Dipendenze Python](#dipendenze-python)
+    - [File richiesti](#file-richiesti)
+  - [Utilizzo](#utilizzo)
+    - [Passaggi](#passaggi)
+    - [Output](#output)
+  - [Gestione degli errori](#gestione-degli-errori)
+  - [Personalizzazioni](#personalizzazioni)
+    - [Cambiare il delimitatore del CSV](#cambiare-il-delimitatore-del-csv)
+    - [Cambiare il fuso orario](#cambiare-il-fuso-orario)
+  - [Esempio di esecuzione](#esempio-di-esecuzione)
+    - [Input](#input)
+    - [Output](#output-1)
+  - [Changelog](#changelog)
+
 ## Descrizione
 
 Versione: 1.1
@@ -8,17 +25,22 @@ Questo script converte un file CSV contenente eventi in un file ICS compatibile 
 ---
 
 ## Requisiti
+
 ### Dipendenze Python
+
 Le seguenti librerie sono necessarie:
+
 - **ics**: per generare il file ICS
 - **pytz**: per gestire i fusi orari
 
 Installa le dipendenze con:
+
 ```bash
 pip install -r requirements
 ```
 
 ### File richiesti
+
 1. **CSV degli eventi**
    - Nome: `events.csv`
    - Formato:
@@ -28,6 +50,7 @@ pip install -r requirements
        2. Data (formato: `DD/MM/YY`)
        3. Nome turno
    - Esempio:
+  
      ```csv
      Evento 1;17/12/24;Mattina
      Evento 2;18/12/24;Pomeriggio
@@ -40,6 +63,7 @@ pip install -r requirements
      - Chiave: Nome turno
      - Valore: Orario (formato: `HH:MM - HH:MM`)
    - Esempio:
+
      ```json
      {
          "Mattina": "06:00 - 14:00",
@@ -51,11 +75,14 @@ pip install -r requirements
 ---
 
 ## Utilizzo
+
 ### Passaggi
+
 1. **Assicurati che i file richiesti siano presenti**
    - `events.csv` e `shifts.json` devono trovarsi nella stessa directory dello script.
 
 2. **Esegui lo script**
+
    ```bash
    python main.py
    ```
@@ -64,52 +91,70 @@ pip install -r requirements
    - Verrà generato un file `calendar.ics` nella stessa directory dello script.
 
 ### Output
+
 Il file `calendar.ics` conterrà tutti gli eventi definiti nel CSV, con gli orari calcolati dai turni definiti nel JSON.
 
 ---
 
 ## Gestione degli errori
+
 - **Turno non trovato**:
+  
   - Messaggio di avviso:
     ```
     Warning: Shift 'Turno Non Esistente' not found in shifts.json. Skipping event 'Evento'.
     ```
+
   - Assicurati che tutti i turni nel CSV siano presenti in `shifts.json`.
 
 - **File mancante**:
   - Messaggio di errore:
+
     ```
     Error: events.csv not found in the current directory.
     ```
+
   - Verifica che il file indicato sia nella directory corretta.
 
 ---
 
 ## Personalizzazioni
+
 ### Cambiare il delimitatore del CSV
+
 Se il file CSV utilizza un delimitatore diverso (es. `,`):
+
 1. Modifica questa riga nel file `main.py`:
+
    ```python
    reader = csv.reader(file, delimiter=';')
    ```
+
    con:
+
    ```python
    reader = csv.reader(file, delimiter=',')
    ```
 
 ### Cambiare il fuso orario
+
 Il fuso orario è configurato su `Europe/Rome`. Per modificarlo:
 1. Modifica questa riga:
+
    ```python
    local_timezone = pytz.timezone("Europe/Rome")
    ```
+
    con il fuso orario desiderato (es. `UTC` o `America/New_York`).
 
 ---
 
 ## Esempio di esecuzione
+
 ### Input
+
 **CSV (`events.csv`)**:
+
 ```csv
 Evento 1;17/12/24;Mattina
 Evento 2;18/12/24;Pomeriggio
@@ -117,6 +162,7 @@ Evento 3;19/12/24;Notturno
 ```
 
 **JSON (`shifts.json`)**:
+
 ```json
 {
     "Mattina": "06:00 - 14:00",
@@ -128,6 +174,7 @@ Evento 3;19/12/24;Notturno
 ### Output
 **ICS (`calendar.ics`)**:
 Un evento nel formato ICS:
+
 ```ics
 BEGIN:VEVENT
 SUMMARY:Evento 1
