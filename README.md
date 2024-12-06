@@ -19,7 +19,8 @@
 
 ## Descrizione
 
-Versione: 1.1
+- Versione: 1.2
+
 Questo script converte un file CSV contenente eventi in un file ICS compatibile con applicazioni calendario (Google Calendar, Apple Calendar, etc.). Lo script utilizza un file JSON per definire gli orari dei turni associati agli eventi.
 
 ---
@@ -190,8 +191,9 @@ END:VEVENT
 
 ## Changelog
 
-- 05/12/2024 : Creazione Script
-- 06/12/2024 : Miglioramento dello script
+- 05/12/2024 : Creazione Script. -> Versione 1.0
+- 06/12/2024 : Miglioramento dello script. -> Versione 1.1
+- 06/12/2024 : Risolti problemi sulle turnazioni notturne. -> Versione 1.2
 
 ---
 
