@@ -1,5 +1,11 @@
 # CSV to Calendar
 
+---
+
+- Versione: 1.2
+
+---
+
 - [CSV to Calendar](#csv-to-calendar)
   - [Descrizione](#descrizione)
   - [Requisiti](#requisiti)
@@ -18,10 +24,6 @@
   - [Changelog](#changelog)
 
 ## Descrizione
-
-- Versione: 1.2
-
----
 
 ![logo](./logo.png)
 
