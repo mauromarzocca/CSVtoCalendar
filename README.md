@@ -7,14 +7,14 @@
     - [File richiesti](#file-richiesti)
   - [Utilizzo](#utilizzo)
     - [Passaggi](#passaggi)
-    - [Output](#output)
+    - [File ics](#file-ics)
   - [Gestione degli errori](#gestione-degli-errori)
   - [Personalizzazioni](#personalizzazioni)
     - [Cambiare il delimitatore del CSV](#cambiare-il-delimitatore-del-csv)
     - [Cambiare il fuso orario](#cambiare-il-fuso-orario)
   - [Esempio di esecuzione](#esempio-di-esecuzione)
     - [Input](#input)
-    - [Output](#output-1)
+    - [Output](#output)
   - [Changelog](#changelog)
 
 ## Descrizione
@@ -90,7 +90,7 @@ pip install -r requirements
 3. **Risultato**
    - Verrà generato un file `calendar.ics` nella stessa directory dello script.
 
-### Output
+### File ics
 
 Il file `calendar.ics` conterrà tutti gli eventi definiti nel CSV, con gli orari calcolati dai turni definiti nel JSON.
 
