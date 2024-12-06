@@ -1,6 +1,6 @@
 import csv
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from ics import Calendar, Event
 import json
 import pytz
@@ -29,7 +29,6 @@ def create_ics_from_csv(csv_file, shift_file, output_file):
             event_name, date_str, shift_name = row
 
             # Parse date and shift times
-            event_date = datetime.strptime(date_str, '%d/%m/%y').date()
             shift_times = shifts.get(shift_name)
             if not shift_times:
                 print(f"Warning: Shift '{shift_name}' not found in {shift_file}. Skipping event '{event_name}'.")
@@ -38,7 +37,13 @@ def create_ics_from_csv(csv_file, shift_file, output_file):
             start_time_str, end_time_str = shift_times.split(' - ')
             start_datetime = local_timezone.localize(
                 datetime.strptime(f"{date_str} {start_time_str}", '%d/%m/%y %H:%M'))
-            end_datetime = local_timezone.localize(datetime.strptime(f"{date_str} {end_time_str}", '%d/%m/%y %H:%M'))
+            end_datetime = datetime.strptime(f"{date_str} {end_time_str}", '%d/%m/%y %H:%M')
+
+            # Handle overnight shifts
+            if end_datetime.time() < start_datetime.time():
+                end_datetime = end_datetime + timedelta(days=1)
+
+            end_datetime = local_timezone.localize(end_datetime)
 
             # Create event
             event = Event()
