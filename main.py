@@ -24,7 +24,8 @@ def create_ics_from_csv(csv_file, shift_file, output_file):
     # Process CSV
     with open(csv_file, 'r') as file:
         reader = csv.reader(file, delimiter=';')  # Adjust delimiter if needed
-        for row in reader:  # Process all rows, including the first
+        next(reader)  # Skip header row
+        for row in reader:  # Process all rows, excluding the header
             event_name, date_str, shift_name = row
 
             # Parse date and shift times
