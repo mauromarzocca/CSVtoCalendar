@@ -2,7 +2,7 @@
 
 ---
 
-- Versione: 1.2
+- Versione: 1.2.1
 
 ---
 
@@ -25,7 +25,12 @@
 
 ## Descrizione
 
+<!-- markdownlint-disable MD033 -->
+<div align=center>
+
 ![logo](./logo.png)
+
+</div>
 
 ---
 
@@ -202,6 +207,7 @@ END:VEVENT
 - 05/12/2024 : Creazione Script. -> Versione 1.0
 - 06/12/2024 : Miglioramento dello script. -> Versione 1.1
 - 06/12/2024 : Risolti problemi sulle turnazioni notturne. -> Versione 1.2
+- 06/12/2024 : Bug Fix -> Versione 1.2.1
 
 ---
 
