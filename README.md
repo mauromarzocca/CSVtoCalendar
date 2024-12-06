@@ -101,7 +101,8 @@ Il file `calendar.ics` conterrà tutti gli eventi definiti nel CSV, con gli orar
 - **Turno non trovato**:
   
   - Messaggio di avviso:
-    ```
+
+    ```bash
     Warning: Shift 'Turno Non Esistente' not found in shifts.json. Skipping event 'Evento'.
     ```
 
@@ -110,7 +111,7 @@ Il file `calendar.ics` conterrà tutti gli eventi definiti nel CSV, con gli orar
 - **File mancante**:
   - Messaggio di errore:
 
-    ```
+    ```bash
     Error: events.csv not found in the current directory.
     ```
 
@@ -139,6 +140,7 @@ Se il file CSV utilizza un delimitatore diverso (es. `,`):
 ### Cambiare il fuso orario
 
 Il fuso orario è configurato su `Europe/Rome`. Per modificarlo:
+
 1. Modifica questa riga:
 
    ```python
@@ -172,6 +174,7 @@ Evento 3;19/12/24;Notturno
 ```
 
 ### Output
+
 **ICS (`calendar.ics`)**:
 Un evento nel formato ICS:
 
@@ -193,4 +196,3 @@ END:VEVENT
 ---
 
 Se hai bisogno di ulteriori dettagli o modifiche, non esitare a chiedere!
-
