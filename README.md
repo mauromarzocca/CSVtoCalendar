@@ -2,7 +2,7 @@
 
 ---
 
-- Versione: 1.3
+- Versione: 1.4
 
 ---
 
@@ -209,6 +209,7 @@ END:VEVENT
 - 06/12/2024 : Risolti problemi sulle turnazioni notturne. -> Versione 1.2
 - 06/12/2024 : Bug Fix -> Versione 1.2.1
 - 29/12/2024 : Migliorata compatibilità con Google Calendar. -> Versione 1.3
+- 13/08/2025 : Migliorata la compatibilità con Apple Calendar. -> Versione 1.4
 
 ---
 
